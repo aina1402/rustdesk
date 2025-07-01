@@ -1532,20 +1532,15 @@ class RustdeskImpl {
 
   Future<void> mainAccountAuth(
       {required String op, required bool rememberMe, dynamic hint}) {
-    return Future(() => js.context.callMethod('setByName', [
-          'account_auth',
-          jsonEncode({'op': op, 'remember': rememberMe})
-        ]));
+    throw UnimplementedError("mainAccountAuth");
   }
 
   Future<void> mainAccountAuthCancel({dynamic hint}) {
-    return Future(
-        () => js.context.callMethod('setByName', ['account_auth_cancel']));
+    throw UnimplementedError("mainAccountAuthCancel");
   }
 
   Future<String> mainAccountAuthResult({dynamic hint}) {
-    return Future(
-        () => js.context.callMethod('getByName', ['account_auth_result']));
+    throw UnimplementedError("mainAccountAuthResult");
   }
 
   Future<void> mainOnMainWindowClose({dynamic hint}) {
