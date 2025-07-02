@@ -659,7 +659,7 @@ class ConnectionManager extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Expanded(child: ClientInfo(client)),
-                      Expanded(
+                      /*Expanded(
                           flex: -1,
                           child: client.isFileTransfer || !client.authorized
                               ? const SizedBox.shrink()
@@ -674,7 +674,7 @@ class ConnectionManager extends StatelessWidget {
                                     }
                                   },
                                   icon: unreadTopRightBuilder(
-                                      client.unreadChatMessageCount)))
+                                      client.unreadChatMessageCount)))*/
                     ],
                   ),
                   client.authorized
