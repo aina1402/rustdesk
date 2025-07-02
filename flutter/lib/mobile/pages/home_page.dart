@@ -79,7 +79,7 @@ class HomePageState extends State<HomePage> {
             title: appTitle(),
             actions: _pages.elementAt(_selectedIndex).appBarActions,
           ),
-          bottomNavigationBar: BottomNavigationBar(
+          /*bottomNavigationBar: BottomNavigationBar(
             key: navigationBarKey,
             items: _pages
                 .map((page) =>
@@ -101,8 +101,8 @@ class HomePageState extends State<HomePage> {
                 }
               }
             }),
-          ),
-          body: _pages.elementAt(_selectedIndex),
+          ),*/
+          body: _pages.elementAt(2),
         ));
   }
 

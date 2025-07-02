@@ -276,48 +276,50 @@ class _ConnectionPageState extends State<ConnectionPage> {
                       }
                       maxHeight = maxHeight.clamp(0, 200);
                       return Align(
-                          alignment: Alignment.topLeft,
-                          child: Container(
-                              decoration: BoxDecoration(
-                                boxShadow: [
-                                  BoxShadow(
-                                    color: Colors.black.withOpacity(0.3),
-                                    blurRadius: 5,
-                                    spreadRadius: 1,
-                                  ),
-                                ],
+                        alignment: Alignment.topLeft,
+                        child: Container(
+                          decoration: BoxDecoration(
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.black.withOpacity(0.3),
+                                blurRadius: 5,
+                                spreadRadius: 1,
                               ),
-                              child: ClipRRect(
-                                  borderRadius: BorderRadius.circular(5),
-                                  child: Material(
-                                      elevation: 4,
-                                      child: ConstrainedBox(
-                                          constraints: BoxConstraints(
-                                            maxHeight: maxHeight,
-                                            maxWidth: 320,
+                            ],
+                          ),
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(5),
+                            child: Material(
+                              elevation: 4,
+                              child: ConstrainedBox(
+                                constraints: BoxConstraints(
+                                  maxHeight: maxHeight,
+                                  maxWidth: 320,
+                                ),
+                                child: _allPeersLoader.peers.isEmpty &&
+                                        !_allPeersLoader.isPeersLoaded
+                                    ? Container(
+                                        height: 80,
+                                        child: Center(
+                                          child: CircularProgressIndicator(
+                                            strokeWidth: 2,
                                           ),
-                                          child: _allPeersLoader
-                                                      .peers.isEmpty &&
-                                                  !_allPeersLoader.isPeersLoaded
-                                              ? Container(
-                                                  height: 80,
-                                                  child: Center(
-                                                      child:
-                                                          CircularProgressIndicator(
-                                                    strokeWidth: 2,
-                                                  )))
-                                              : ListView(
-                                                  padding:
-                                                      EdgeInsets.only(top: 5),
-                                                  children: options
-                                                      .map((peer) =>
-                                                          AutocompletePeerTile(
-                                                              onSelect: () =>
-                                                                  onSelected(
-                                                                      peer),
-                                                              peer: peer))
-                                                      .toList(),
-                                                ))))));
+                                        ),
+                                      )
+                                    : ListView(
+                                        padding: EdgeInsets.only(top: 5),
+                                        children: options
+                                            .map((peer) => AutocompletePeerTile(
+                                                onSelect: () =>
+                                                    onSelected(peer),
+                                                peer: peer))
+                                            .toList(),
+                                      ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      );
                     },
                   ),
                 ),
