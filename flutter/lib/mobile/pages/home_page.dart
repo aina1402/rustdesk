@@ -76,7 +76,10 @@ class HomePageState extends State<HomePage> {
           // backgroundColor: MyTheme.grayBg,
           appBar: AppBar(
             centerTitle: true,
-            title: appTitle(),
+            title: Text(
+              'Démarrage de service',
+              style: Theme.of(context).textTheme.titleSmall,
+            ) /*appTitle()*/,
             actions: _pages.elementAt(_selectedIndex).appBarActions,
           ),
           /*bottomNavigationBar: BottomNavigationBar(
@@ -239,11 +242,11 @@ class WebHomePage extends StatelessWidget {
       }
     }
     if (id != null) {
-      connect(context, id, 
-        isFileTransfer: isFileTransfer, 
-        isViewCamera: isViewCamera, 
-        isTerminal: isTerminal,
-        password: password);
+      connect(context, id,
+          isFileTransfer: isFileTransfer,
+          isViewCamera: isViewCamera,
+          isTerminal: isTerminal,
+          password: password);
     }
   }
 }
